@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script> //문서 시작시 써주기.위치는 어디든 무관하나 헤더 자리를 권한다.
+       // document.getElementById("console").innerText="안녕";//error: 이 문장이 먼저 실행되므로 밑을 찾을수 없다.
+        console.log("hello1<br>"); //내부스크립트
+        function play(){
+            document.getElementById("console").innerHTML="안녕";
+            console.log("함수");
+        }
+    </script>
+    <script src="js/list.js"> </script>
+
+   
+</head>
+<body onload="console.log('내장스크립트');play()"> <!--자바스크립트안에 html을 넣을수 있다. onload는 맨 마지막에 실행-->
+    <p id="console"></p>
+    <script> 
+        console.log("hello2");
+    </script>
+</body>
+</html>
