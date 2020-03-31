@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+    <script>
+        /*
+        .innerTEXT  찾은부분에 TEXT로 추가
+        .innerHTML  찾은부분에 HTML이 해석되어 추가
+        .value      사용자가 입력한 값을 추가
+         */
+        function myFunction(){
+            var x,text; // 변수선언
+            x=document.getElementById("number1").value; //X가 문자인지 숫자인지 판별
+            if(isNaN(x)||x<0||x>10){//not a number
+                text="not valid";
+            }
+            else{
+                text="valid";
+            } 
+            document.getElementById("console").innerText=text;
+        }
+        function changeImage(){
+            var image=document.getElementById("myImg"); //javascript에선 자료형 구분없이 var
+            //image.src="img/bulb_on.jpg";
+            if(image.src.match("on")){
+                image.src="img/bulb_off.jpg";
+            }else{
+                image.src="img/bulb_on.jpg";
+            }
+        }
+        
+    </script>
+</head>
+<body>
+    <p id="console">'hello'</p><br>
+    <img id="myImg" src="img/bulb_off.jpg" width="200" height="200">
+
+    <button type="button" 
+    onClick="document.getElementById('console').innerText+='안녕<br>'" >1.click!</button>
+    <button type="button" 
+    onClick="document.getElementById('console').innerHTML+='안녕<br>'" >2.click!</button>
+    <button type="button" 
+    onClick="changeImage()">3.click!</button>
+    <button type="button" 
+    onClick="document.getElementById('console').style.fontSize='25px'">4.click!</button> 
+
+    1~10사이의 숫자를 입력받기(유효성 검사)
+    <input type="text" id="number1">
+    <button type="button" 
+    onClick="myFunction()"> 5.click!</button> 
+    
+    <!--
+        javaScript가 하는일 
+        1.html 내용 변경
+        2.html구조 변경
+        3.html 태그의 속성 변경 
+        4.CSS 속성 변경
+        5.유효성검사 위해 사용
+    -->
+</body>
+</html>
