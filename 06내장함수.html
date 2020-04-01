@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        내장함수
+        내장객체
+        '내장'이란 프로그래머들이 미리 만들어놓은 것들이다.  
+        */
+
+       //1.경고창
+       alert('hi'); //=window.alert('hi') 전역변수인데 생략
+       //2.사용자입력
+       var result=window.prompt("성적입력","여기에 입력"); //사용자입력칸이 생김. 어떤 입력값이던 '문자열'로 받음 
+       window.document.write(result);                      //예)20+10=2010  그러므로 형전환이 필요.
+
+       var result=window.confirm("확인 or 취소")
+       window.document.write(result); //true false값이 리턴됨.
+
+       // 3.typeof :자료형이 무엇인지 리턴해준다.
+       window.document.write(typeof 'String'); //string
+       window.document.write(typeof []); //object
+       window.document.write(typeof ({})); //object
+
+       //4.eval함수; string을 코드로 인식해 값을 리턴
+       var str="var a=1";
+       str=str+"alert(a)";
+       eval(str);
+       alert(a);
+      
+       //5.isNaN
+       document.write(isNaN(12),"<br>"); //false
+       document.write(isNaN('12'),"<br>"); //false
+       document.write(isNaN('12f'),"<br>"); //true 숫자가 아니므로
+
+      //6.Number()
+       var a='10원';
+      a=Number(a);
+      document.write(a+a); //NaN
+
+      //7.parseInt ,parseFloat
+      var a="10.12$";
+      document.write(parseInt(a)); //10
+      var a="10.12$";
+      document.write(parseFloat(a)); //10.12
+      
+      //8.toFixed() :소수점 3번째자리에서 반올림 하여 2번째자리까지 나타냄.
+      var a="10.12545$";
+      document.write(parseFloat(a).toFixed(2));//10.12 
+
+
+
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

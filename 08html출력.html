@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //그림넣기
+        var str="";
+        var imgName="img/bulb_on.jpg"
+       // str=" <img src='" +imgName+"'/> " 
+       str="<img src='"+imgName+"'>"
+        document.write(str);
+
+        
+
+        //테이블넣기
+        var str="<table border=1>"
+            str+="<tr><td></td><td></td></tr>";
+            str+="<tr><td></td><td></td></tr>";
+            str+="<tr><td></td><td></td></tr>";
+            str+="<tr><td></td><td></td></tr>";
+            document.write(str);
+
+        document.write("안녕","<br>")
+
+       
+            for(var j=0;j<5;j++){
+                document.write('횟수'+(j+1),"<br>");
+                for(var i=0;i<5;i++){
+                    document.write('안녕'+i,"<br>");
+                    document.write(j+':'+i,"<br>");
+                }
+                }
+            //구구단 출력
+            for(var i=2;i<=9;i++){
+                    document.write(i+"단","<br>")
+                for(var j=1;j<=9;j++){
+                    document.write(i+"*"+j+"="+i*j,"<br>");
+                }
+                }
+            //tr과 td의 값을 입력받아 테이블을 만들어보자. 그후 td안에 1부터 차례대로 출력해보자.
+            var tr=prompt('행(tr)의 개수 입력');
+            var td=prompt('열(td)의 개수 입력');
+            var count=1;
+            var str="<table border=1>"
+                for(var t=0;t<tr;t++){
+                      str+="<tr>"
+                    for(var d=1;d<=td;d++){
+                       str+='<td>'+count++ + '</td>'; //실수 원인: count++가 아닌 count만 써서 반복된것. 증감연산자를 써서 늘려줘야 함 
+                       //다른 방법 count++대신 t*3+d
+                        }
+                    str+="</tr>";
+                   }
+                   str+='</table>';
+                   document.write(str);
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
