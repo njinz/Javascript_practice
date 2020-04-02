@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script>
+        // /*함수
+        // 관련있는 코드를 묶어놓은 것.
+        // */
+        function hi(){
+        document.write("안녕")
+        }
+        hi();
+
+        // //리턴값 함수이름(자료형 매개변수) ->자바
+        // //리턴값x function 함수이름o 자료형x 매개변수o ->자바스크립트(자료형이 한개뿐이므로)
+        
+        //문자열을 리턴받아서 출력하는 형태의 함수를 만들어보자.
+        function table(){
+           var str="<table width='100%' height=200 bgcolor=yellow><tr><td></td></tr></table>"
+           document.write(str)
+           }
+          
+        function moveTop(){
+            var str1="<a href='#top'>top으로 이동</a>"
+            document.write(str1)
+           
+        }
+        table();
+        moveTop();
+        table();
+        moveTop();
+
+        //매개변수가 있는 함수
+        function add(a,b){
+            return a+b;
+        }
+          document.write(add(10,20));
+
+        //say("안녕",5):안녕을 5번 출력하는 함수
+        //hap(1,100,2):1~100까지의 2의 배수의 합
+        //madeTable('id'); moveTop('id'): a href태그를 써서 해당 id로 이동하게끔 만들어보자.
+
+        function say(a,b){
+            for(var i=1;i<=b;i++){
+                document.write(a);
+            }
+        }       
+        say("안녕",5);
+
+        function hap(a,b,c){
+            var sum=0;
+            for(var i=a;i<=b-a+1;i++){
+                if(i%c==0){
+                   sum+=i;  
+                }
+                }
+            document.write(sum)
+        }
+        hap(2,5,2);
+
+        //주의 (str 분리가 중요)
+        function madeTable(id){
+                 str="<table border=1 width= 100% height = 400 bgcolor= gray id="
+                 str+=id
+                 str+="></table>"
+                 document.write(str);
+                }
+        
+        function moveTop(id){
+                str1="<a href='#"
+                str1+=id
+                str1+="'>" 
+                str1+=id
+                str1+="로 이동</a>"
+                document.write(str1);
+                }
+        
+            madeTable("테이블1");
+            moveTop("테이블1");
+            madeTable("상자2");
+            moveTop("상자2");
+
+    </script>
+
+</head>
+<body>
+   
+</body>
+</html>

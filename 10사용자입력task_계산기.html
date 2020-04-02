@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    //1. 버튼 3개 만들어 계산기
+    //2. 피시방 요금계산
+    //3. 자판기 
+    document.write('계산기',"<br><br>");
+    function myClick(){
+        var num1=document.getElementById('t1').value;
+        var oper=document.getElementById('t2').value;
+        var num2=document.getElementById('t3').value;
+        var result;
+        switch(oper){
+            case '+':
+            result=num1+num2;
+            break;
+            case '-':
+            if(num1<num2){
+                var tmp=0;
+                tmp=a;
+                a=b;
+                b=tmp;}
+            result=num1-num2;
+            break;
+            case '*':
+            result=num1*num2;
+            break;
+            case '/':
+            result=num1/num2;
+            break;
+            case '%':
+            result=num1%num2;
+            break;
+            default:
+            break;
+        }
+        alert(result);
+        
+    }
+</script>
+<body>
+    
+    <input type='text' id='t1' placeholder='숫자입력'><br>
+    <input type='text' id='t2' placeholder='연산자입력(+-*/%)'><br>
+    <input type='text' id='t3' placeholder='숫자입력'>
+    <input type='button' id='t3' onclick="myClick()" value="결과보기">
+</body>
+</html>
