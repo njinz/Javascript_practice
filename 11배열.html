@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // //배열
+        var arr=new Array(); 
+        var arr=new Array(10); //배열크기가 10인배열
+        var arr=new Array(1,2,3,4); //1,2,3,4를 가지는 크기는 4인 배열
+        var arr=[1,2,3,4]; // 초기값을 이용한 배열생성
+
+        var kor=[10,12,54];
+        kor[6]=50;
+        document.write(kor,"<br>"); //10,12,54,,,,50 사잇값을 컴마(,)로 채운다.
+        var kor=[10,12,54];
+
+        var sum=0;
+        for(var i=0;i<kor.length;i++){
+            sum=sum+kor[i]
+        }
+        document.write(sum);
+
+        var arr=[10, 1.23, 'String' ,true, function(a){alert(a);}, {age:10,name:'hong'},[2,4]]; 
+        //자료형이 하나니까 한 배열에 여러 자료형을 넣을수 있다.
+        document.write(arr[0],"<br>");
+        arr[4]('test',"<br>");//함수 실행법 . document 찍으면 리턴값없어서 undefined 나옴 ()써줘야함.
+        document.write(arr[5].age,"<br>"); //객체접근법: .찍어서 key값 적어줌. 
+        document.write(arr[6][0]); //2
+        
+        var arr=[[1,2,3],[4,5,6],[7,8,9]]; //이차원배열: 3*3 큐브와 같다. (0,0)(0,1)...(2,2)
+
+        //이차원 배열 선업법
+        var arr=new Array(); 
+        arr[0]=new Array(); //주의.얘도 배열이니 필수적으로 해줘야함. 안하면 배열로 인식을 못함.
+        arr[1]=new Array();
+        arr[2]=new Array();
+
+        //매번 만들기 귀찮으니 자동화로 만들자.
+        var index=3;
+        var arr=new Array(index);
+        for(var i=0;i<arr.length;i++){
+            arr[i]=new Array();
+        }
+
+        //자바에 컬렉션(=자료구조)이 있다. 
+        //JS에서는 '배열의 메소드'
+        //list : 연속된 Data 
+        //list를 이용한 LIfO(Last in fast out)
+        //후입선출.마지막에 들어간 데이터가 먼저 나간다.ex.연탄
+        //stack: list를 이용한 자료구조중 하나.
+        // push():데이터를 넣는것 pop():데이터를 꺼내는것
+        // top():스택의 맨위 에 있는 데이터를 반환
+        
+        var arr=new Array();
+        arr.push('a');
+        arr.push('b');
+        arr.push('c');
+        document.write(arr,"<br>");
+        document.write(arr.pop(),"<br>"); //마지막에 넣은 c가 출력된다.(후입선출)
+        document.write(arr,"<br>"); //a,b
+        arr.push('d');
+        document.write(arr,"<br>"); //a,b,d
+
+        //큐 FIFO (First in First out) :선입선출
+        //용어: front rear (js 에서는 shilft, unshift)
+        //front(shift) 데이터를 꺼내오기(꺼내면 배열에서 사라짐)
+        //rear(unshift) 데이터 넣기
+
+        var arr=new Array();
+        arr.unshift("a");
+        // arr.unshift("b");
+        // arr.unshift("c");
+        arr.push('a'); //값 넣기
+        arr.push('b');
+        arr.push('c');
+        document.write(arr,"<br>"); //a,b,c
+        
+         //읽어오기
+         
+         document.write(arr,"<br>"); //a,b,c
+         document.write(arr.shift(),"<br>"); //a
+         document.write(arr,"<br>");//b,c
+
+        //splice
+        //첫번째 인자에서 2번째 인자만큼 삭제하고 다음에 오는 데이터로 기존배열에 추가한다.
+
+        var arr=['a','b','c','d'];
+        document.write(arr,"<br>")//a,b,c,d
+        arr.splice(2,0,'k','j');
+        document.write(arr,"<br>");//a,b,k,j,c,d
+        arr.splice(2,3,'T','T');
+        document.write(arr,"<br>") //a,b,T,T,d
+        //arr.splice(2,3);
+        document.write(arr,"<br>")//a,b
+
+        //정렬(문자열만 정렬)
+        arr.sort();
+        document.write(arr,"<br>"); //T,T,a,b,d
+
+        var arr=['a','A','1','e','d','e'];
+        arr.sort();
+        document.write(arr,"<br>"); //1,A,a,d,e,e 대문자가 아스키코드가 작아서 작은 A부터 출력됨. 
+
+        var arr=[64,3,5,68,43,54];
+        arr.sort();
+        document.write(arr,"<br>");//3,43,5,54,64,68 숫자라 정렬 제대로 안됨.
+
+        // //숫자정렬 하려면 sort의 매개변수로 비교함수를 넣어줘야함.
+        var a=arr.sort(function(a,b){return a-b; } )  
+                            //중요  + (양수)-(음수) 0(같다) 인지에 따라 크기를 비교.
+                            //결과값이 0보다 작으면 a가 낮은 색인으로 정렬됩니다.
+                            //결과값이 0이면 a와 b의 순서를 바꾸지 않습니다.
+                            //결과값이 0보다 크면 b가 낮은 색인으로 정렬됩니다.
+        document.write(arr,"<br>"); //정렬됨(오름차순). //3,5,43,54,64,68
+ 
+        arr.reverse(); //역정렬(내림차순)  
+        document.write(arr,"<br>"); //68,64,54,43,5,3
+
+        //concat 두배열을 합치기
+        var arr1=[32,54,9,0];
+        var arr2=[64,3,5,68];
+        var concated=arr1.concat(arr2);
+        document.write(arr1,"<br>"); //32,54,9,0
+        document.write(arr2,"<br>"); //64,3,5,68
+        document.write(concated,"<br>"); //32,54,9,0,64,3,5,68
+        document.write(concated.sort()); //0,3,32,5,54,64,68,932,54,9,0
+       
+
+        //join 배열의 내용을 특정 문자로 연결해서 하나의 '문자열'로 출력
+        var newArr=arr1.join('~');
+        document.write(arr1,"<br>");
+        document.write(newArr,"<br>"); //32~54~9~0
+
+        //indexof
+        document.write(arr1.indexOf(54),"<br>");//1
+
+        //array.slice(start,end): 배열의 start에 해당하는 요소부터 end '바로 전'의 요소까지를 선택, 새로운 배열을 생성
+        var arr1=[32,54,9,0,1,1];
+        document.write(arr1,"<br>"); 
+        document.write(arr1.slice(2),"<br>"); //9,0,1,1
+        document.write(arr1.slice(2,3),"<br>"); //9
+        document.write(arr1.slice(-4,-1),"<br>")//음수이면 마지막 요소를 기준으로 생성. //9,0,1
+
+        //filter 조건(함수)에 맞게 걸러내고 새로운 배열 생성 
+        var arr1=[32,54,9,0,1,1];
+        var arr2=arr1.filter(function(element,index,array){ 
+            //return element>10; (10보다 큰수 구할때)
+            //10보다 큰수는 10 작은수는 0으로 만들어보자. 
+            // if(element>10){
+            //     array[index]=10;
+            //     }else{
+            //         array[index]=0;
+            //         }
+            //         return true;
+
+            //배열의 평균보다 큰데이터
+                var sum=0;
+                for(var i=0;i<array.length;i++){
+                    sum+=arr1[i];}
+                var avg=sum/arr1.length;
+                if(element>avg){
+                    return true;
+                }else{                                   //true이면 배열에 넣고 아니면 배열에서 삭제.
+                    return false;                        //element:현재데이터 index:현재인덱스 array:배열전체 
+                }
+               
+                }); 
+                
+               
+                    
+        document.write(arr1,"<br>"); //32,54,9,0,1,1
+        document.write(arr2,"<br>"); //32,54
+        
+        
+        
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
