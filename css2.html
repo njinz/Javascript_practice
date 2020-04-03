@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html{
+            /* height:100%;  */
+        }
+        body{
+            margin:0px;
+            /* border:2px solid red;
+            width:100%-4px; /*연산 가능*/
+            /* height:100%; body에서 height:100%는 불가 html css에서 100%으로 설정해줘야 화면 가득참 */ */
+        }
+        .content{
+            background-size:cover;
+            background-size:contain;
+            
+            background-image:url("img/bulb_on.jpg");
+            /* width:100px;
+            height:100px; */
+
+            /* width:auto; 부모 따라감(100%가 가능)
+            height:auto; */
+
+            width:100vw; /*요즘 쓰는 화면 비율단위*/
+            height:100vh;
+        }
+    </style>
+</head>
+<body>
+   <div class="content">하이하이</div> 
+</body>
+</html>
