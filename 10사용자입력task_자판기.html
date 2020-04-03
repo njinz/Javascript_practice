@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table border='2' width=500 height=500>
+        <tr>
+            <th colspan=4 height=50 bgcolor="eeeeee"><h1>
+                <font color="red">자</font>
+                <font color="teal">판</font>
+                <font color="yellow">기</font>
+            </h1></th>
+        </tr>
+        <tr align=center height='130' width='130'>
+            <td>
+                <img src="img/콜라.jpg" width='50'><br>
+                <input type='button' onclick="inputAndChoose(1,1100)" value="1100원">
+            </td>
+            <td>
+                <img src="img/사이다.jpg" width='50'><br>
+                <input type='button' onclick="inputAndChoose(2,1200)" value="1200원">
+            </td>
+            <td>
+                <img src="img/환타.jpg" width='50' height='100'><br>
+                <input type='button' onclick="inputAndChoose(3,1300)" value="1300원">
+            </td>
+            <td width=100>
+                <input type='button' value="1000원"
+                onclick="inputAndChoose(0,1000)" style='width:60pt;height:20pt'><br>
+                <input type='button' value="500원"
+                onclick="inputAndChoose(0,500)" style='width:60pt;height:20pt'><br>
+                <input type='button' value="100원"
+                onclick="inputAndChoose(0,100)" style='width:60pt;height:20pt'><br>
+                <input type='text' value="투입금액"
+                id="f1" style='width:60pt;height:20pt'><br>
+            </td>
+
+        </tr>
+        <tr align=center height:"130"  width='130'>
+            <td>
+                <img src="img/블랙.gif" width='65' height='90' ><br>
+                <input type="button" onclick="inputAndChoose(4,400)" value="400원">
+            </td>
+            <td>
+                <img src="img/블랙.gif" width='65' height='90' ><br>
+                <input type="button" onclick="inputAndChoose(5,400)" value="400원">
+            </td>
+            <td>
+                <img src="img/블랙.gif" width='65' height='90' ><br>
+                <input type="button" onclick="inputAndChoose(6,400)" value="400원">
+            </td>
+            <td>
+                <input type="button" value="잔돈 반환" onclick="moneyChange()">
+            </td>
+        </tr>
+        <tr align=center>
+            <td id="f2" colspan='3'></td>
+            <td>
+                500원<input type='text' id='f3' style="width:20pt; height:20pt"/>개<br>
+                100원<input type='text' id='f4' style="width:20pt; height:20pt"/>개<br>
+            </Td>
+        </tr>
+        </table>
+
+    <script>
+        var inputmoney=0;
+        function inputAndChoose(type,price){
+            str="";
+            if(type==0){
+                inputmoney+=price;
+            }else{
+                if(inputmoney>=price){
+                    inputmoney-=price;
+                    if(type==1){
+                        str+="<img src='img/콜라.jpg' width='50'>"
+                    }else if(type==2){
+                        str+="<img src='img/사이다.jpg' width='50'>"
+                    }else if(type==3){
+                        str+="<img src='img/환타.jpg' width='50' height=100>"
+                    }else{
+                        str+="<img src='img/블랙.gif' width='65' height=90>"
+                    }
+                }else{
+                    alert("금액부족")
+                }
+            }
+            document.getElementById("f2").innerHTML+=str;
+            document.getElementById("f1").value=inputmoney+"원";
+
+        }
+           
+    
+            
+        function moneyChange(){
+                c5count=0;
+                c1count=0;
+                while(true){
+                    if(inputmoney>=500){
+                     inputmoney-=500;
+                     c5count++;
+                    }else if(inputmoney>=100){
+                        inputmoney-=100;
+                        c1count++;
+                    }else{
+                        break;
+                    }
+                  
+                }
+                
+                document.getElementById("f1").value=inputmoney+"원"
+                document.getElementById("f3").value=c5count;
+                document.getElementById("f4").value=c1count;
+        }
+                
+            
+    
+        
+         
+        
+       
+    </script>
+    
+    
+
+</body>
+</html>
