@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS정렬</title>
+    <style>
+        body{
+            background-color: aquamarine;
+        }
+        .content{
+            background-color:chartreuse;
+            width:200px;
+            margin:50px auto; /*content div 정렬*/
+            padding: 50px 0; /*div안에 세로정렬*/
+            text-align: center; 
+            /* height:100px; */
+            /* text-align: center; */
+        }
+        span{
+            background-color: rgb(139, 62, 137);
+            display: inline-block; /*span 은 inline이라 높이너비 조절불가. inline-block해주면 가능*/
+            /* height:100px; */
+            /* line-height: 100px; 세로정렬:글자를 정중앙 높이만큼 오게 하고 싶을때 line-height를 도형길이만큼 설정 */
+            
+        }
+        .content img{
+            vertical-align: middle; /*밑에 공백이 있었던 이미지를 꽉채움*/
+        }
+
+    </style>
+</head>
+<body>
+    <!--div.content>span{test}-->
+    <!--요즘 가운데정렬 하는 방법 : flex grid css-->
+    <div class="content">
+        <span><img src='img/블랙.gif' width=50 height=50>test</span>
+        
+    </div>
+
+    
+
+
+</body>
+</html>

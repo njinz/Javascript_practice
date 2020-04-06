@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*css우선순위*/
+        .myTitle{background-color:black;}
+        h1.myTitle{background-color: darkgoldenrod;}
+        h1.myTitle.myTitle2{
+            background-color: cadetblue;
+        }
+        .myTitle.myTitle2:hover{
+            background-color:crimson 
+            !important;
+        }
+        #id1{
+            background-color: deeppink;
+             
+        } /*id가 우선순위 가 가장높다*/
+        h1{background-color: mediumblue;}
+        h1{background-color: red;}
+        /*위처럼 우선순위가 같으면 순서대로 시작,마지막 css가 적용된다.*/
+        *{background-color: orange;} /*h1은 바뀌지 않는다. h1우선순위가 더 높다.
+        /*범위가 좁은 css(h1)의 우선순위가 더 높다.
+        /*  우선순위 : * < 태그 < class < id  */
+        /*태그.class는? class다음에 들어간다. 더 세부적.*/ 
+        li{
+            background-color: darkgray;
+            margin:1rem; /*rem: 마진 결정하는 상대적 단위. '브라우저가 세팅한 기본크기 기준'으로 크기가 잡힘*/
+            padding: 1rem;
+            border-left:0.5em solid black; /*1em:'부모기준'으로 크기 1배 2em:2배*/
+            list-style-type:none;
+            
+        }
+
+
+        .red{
+            border-left:0.5em solid red;
+            color:red;
+        }
+
+
+        
+    </style>
+</head>
+<body>
+    <!--div.content>h1+ul.myList>li{item$}*5-->
+    <div class="content">
+        <h1 id="id1"class="myTitle 
+        myTitle2">myList</h1>
+        <ul class="myList">
+            <li class="red">item1</li>
+            <li>item2</li>
+            <li>item3</li>
+            <li>item4</li>
+            <li>item5</li>
+            <li>item6</li>
+        </ul>
+    </div>
+  
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>float으로 div쌓기</title>
+    <style>
+         .grid{
+            width:500px;
+            margin:0 auto;
+            background-color: darkgray;
+            /* font-size: 0px; */
+            overflow:hidden;
+            text-align:left;
+        }
+        .grid div{
+            float:left;
+            /* font-size: 22px; */
+            display:inline-block;
+            width:100px;
+            height:100px;
+            background-color: red;
+        }
+
+        
+
+    </style>
+</head>
+<body>
+    <div class='grid'>
+        <div>a</div>
+        <div style="float: right;">b</div>
+        <div>c</div>
+    </div>
+</body>
+</html>
