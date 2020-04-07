@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    /* http://meyerweb.com/eric/tools/css/reset/ 
+    v2.0 | 20110126
+    License: none (public domain)
+    */
+
+    html, body, div, span, applet, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    a, abbr, acronym, address, big, cite, code,
+    del, dfn, em, img, ins, kbd, q, s, samp,
+    small, strike, strong, sub, sup, tt, var,
+    b, u, i, center,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td,
+    article, aside, canvas, details, embed, 
+    figure, figcaption, footer, header, hgroup, 
+    menu, nav, output, ruby, section, summary,
+    time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+    }
+    /* HTML5 display-role reset for older browsers */
+    article, aside, details, figcaption, figure, 
+    footer, header, hgroup, menu, nav, section {
+        display: block;
+    }
+    body {
+        line-height: 1;
+    }
+    ol, ul {
+        list-style: none;
+    }
+    blockquote, q {
+        quotes: none;
+    }
+    blockquote:before, blockquote:after,
+    q:before, q:after {
+        content: '';
+        content: none;
+    }
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+    /* flex grid */
+    .container{
+        display:grid;
+        /* grid-template-columns: 40fr 60fr; fr:새로운 단위 */
+        grid-template-columns: repeat(3,1fr)
+        /* grid-auto-rows: 300px; */
+        grid-gap: 1rem; /*공백주기*/
+
+        height:100vh;
+        background:lightgray;
+    }
+    .item{
+        
+        background-color: yellow;
+    }
+    .itme:nth-child(5){
+        justify-self: center;
+        align-self: center;
+    }
+
+    .item:nth-child(odd){
+        background-color: red;
+    }
+    .itme:nth-child(1){
+        /*1~4까지 크기를 설정*/
+    grid-column:1/4;
+    }
+    .itme:nth-child(4){
+        /*1~4까지 크기를 설정*/
+    grid-column:3;
+    grid-row: 2/4;
+    }
+    .itme:nth-child(9){
+        /*1~4까지 크기를 설정*/
+    grid-column:3;
+    grid-row: 3/5;
+    }
+
+    
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">
+            <img width=50 height=50 src="img/사이다.jpg">  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos laborum quibusdam, maiores accusantium architecto quidem incidunt. Quod animi esse laboriosam expedita quos </p>          
+        </div>
+   
+        <div class="item">
+            <img width=50 height=50 src="img/사이다.jpg">2
+        </div>
+        <div class="item">
+            <img width=50 height=50 src="img/사이다.jpg"> 3          
+        </div>
+   
+        <div class="item">
+            <img width=50 height=50 src="img/사이다.jpg">4
+        </div>
+        <div class="item">
+            <img width=50 height=50 src="img/사이다.jpg"> 5          
+        </div>
+   
+        <div class="item">
+            <img width=50 height=50 src="img/사이다.jpg">6
+        </div>
+        <div class="item">
+            <img width=50 height=50 src="img/사이다.jpg"> 7          
+        </div>
+   
+        <div class="item">
+            <img width=50 height=50 src="img/사이다.jpg">8
+        </div>
+        <div class="item">
+            <img width=50 height=50 src="img/사이다.jpg">  9          
+        </div>
+   
+       
+    </div>
+    
+</body>
+</html>
