@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //bom
+        location.href="http://www.daum.net"; //다음홈페이지가 열린다.
+
+        history.go(1) //forward 1칸과 같다. 
+        history.forward();
+        history.back();
+        history.go(-1);
+
+        // //json (javascript object notation) :자바스크립트 객체
+        var obj={name:{firstName:"kim",secondName:"lee"},age:20,item:["a","b"],
+                display:function(){ var a="hello";
+                alert (this.age+a);
+                alert(this.name.fisrtName)}
+                }; //중요. 함수, 다른객체, 모든 자료형 올수 있다. 
+                
+        obj.display();
+        alert(obj.neme.secondName);
+        obj.color="red";
+        alert(obj.color); //red
+        
+        //직사각형 넓이와 둘레를 구하는 객체를 만들어보자. 
+        var rectangle={
+            w:4,
+            h:6,
+            area:function(){
+                return this.w*this.h;
+                },
+            round:function(){
+                return 2*(this.w+this.h)
+                },
+            display:function(){
+                alert("넓이:"+this.area()+"둘레"+this.round());
+            }
+            }
+        rectangle.display();
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
