@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //정규식:특정한 규칙을 가진 문자열의 집합을 표현하는데 사용하는 형식언어.
+        //암기불가이므로 구글링해서 찾아쓰기
+
+        //특정 문자열을 입력했을때만 실행해보자.
+    function f1(){
+        var txt=document.getElementById("i1").value;
+
+        var re=/hello/i; // 사선으로 표현.대소문자 구분 안함. 
+        var rePhone=/(^02.{0}|^01.{1}|[0-9]{3})([0-9]+)([0-9]{4})/g;
+        // if(txt=='hello'){
+            if(rePhone.test(txt)){ //대문자 소문자 다 가능하도록 뜻:re와 txt가 같을때
+            alert('맞아요')
+
+        }else{
+            alert('틀림')
+        }
+    }
+
+    </script>
+</head>
+<body>
+    <input type="text" id="i1">
+    <button onclick="f1()">확인</button>
+</body>
+</html>

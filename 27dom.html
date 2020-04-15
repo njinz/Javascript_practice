@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+    <script>
+        //DOM : Document Object Model (찾아서 추가하고 삭제하는 등 css의 '선택자'와 유사개념)
+        //document. //dom
+
+        /*
+            dom을 구성하는 4개의 노드
+            1.DOCUMENT_NODE  : 전체 html문서를 나타내는 노드
+              ex) window.document
+            2.ELEMENT_NODE : html 태그를 나타내는 노드 
+            3.ATTRIBUTE_NODE : 속성을 나타내는 노드
+            4.TEXT_NODE : 태그안에 문자를 나타내는 노드
+
+        */
+        function f1(){
+            //textbox에 접근해보자
+            //alert(document.myForm.txt1.value) //name으로 접근. (value:사용자입력 한것에 접근)
+            // alert(document.getElementsById("txt1").value); //id로 접근. 위와 동일하게 동작
+            // alert(document.getElementsByTagName("input")[0].value);// tagname으로 접근. "리턴값이 배열" 이다.
+            
+            
+            
+            //문제. db->database로 변경
+            //      math->math2로 변경
+            document.getElementsByTagName("li")[1].innerHTML="database";
+            document.getElementsByTagName("li")[6].innerHTML="math2"; //li가 많아지면 찾기 어려운 단점.
+            var u2=document.getElementById("u2");
+            u2.getElementsByTagName("li")[2].innerHTML="math3";
+            
+
+        }
+        
+    </script> 
+</head>
+
+<body>
+    <!-- <form name="myForm">
+        <input type="text" id="txt1" name="txt1">
+        <button onclick="f1()">클릭</button>
+    </form> -->
+
+    <button onclick="f1()">클릭</button>
+    <ul id="u1">
+        <li>java</li>
+        <li>db</li>
+        <li>javascript</li>
+        <li>java</li>
+    </ul>
+    <ul id="u2">
+        <li>eng</li>
+        <li>kor</li>
+        <li>math</li>
+    </ul>
+
+</body>
+</html>

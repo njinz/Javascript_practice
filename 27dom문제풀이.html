@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //문제
+        //1.사과를 사과이미지로 변경
+        //2.div박스 색상,크기변경
+        //3.로그인창 활성화(focus,blur)
+
+       window.onload=function(){
+           var locate=document.getElementsByTagName("li")[0];
+           var parent=document.getElementsByTagName("ul")[0];
+
+           var appleImg=document.createElement("img");
+           appleImg.src="img/사과.jpg";
+
+           parent.replaceChild(appleImg,locate);
+       }
+       function f1(){
+           document.getElementById("myDiv").style.height="100px";
+           document.getElementById("myDiv").style.backgroundColor="pink";
+           document.getElementById("myDiv").style.border="1px solid red"; 
+       }
+       function f2(){
+           document.getElementById("myDiv").style.height="500px";
+           document.getElementById("myDiv").style.backgroundColor="lightgrey";
+           document.getElementById("myDiv").style.border="2px dotted blue"; 
+       }
+       function f3(){
+           document.getElementsByTagName("span")[0].style.backgroundColor="lightgreen";
+       }
+       function f4(){
+           var parent1=document.getElementById("myDiv");
+           var child1=document.getElementById("strHi");
+
+           var txt2=document.createElement("span");
+           var txt1=document.createTextNode("식사");
+
+           txt2.appendChild(txt1);
+           parent1.replaceChild(txt2,child1);
+       }
+       function f5(){
+        document.getElementById("idBox").style.backgroundColor="purple";
+       }
+       function f6(){
+        document.getElementById("idBox").style.backgroundColor="balck";
+       }
+    </script>
+</head>
+<body>
+    <div><p>과일리스트</p><ul><li>사과</li><li>배</li><li>오렌지</li></ul></div>
+    <p></p>
+    <div id="myDiv">
+        <span id="strHi">안녕</span>하세요
+    </div>
+    <input type="button" value="변경1" onclick="f1()">
+    <input type="button" value="변경2" onclick="f2()">
+    <input type="button" value="변경3" onclick="f3()">
+    <input type="button" value="변경4" onclick="f4()">
+    <p></p>
+    <input type="text" id='idBox' onfocus="f5()" onblur="f6()">
+    
+</body>
+</html>
